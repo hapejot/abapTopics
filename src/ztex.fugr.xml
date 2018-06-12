@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>TeX</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZTEXTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZTEX</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>Z_PDFTEX_ATTACH</FUNCNAME>
+     <SHORT_TEXT>attaching a binary file to the session</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_SESSIONID</PARAMETER>
+       <TYP>CHAR40</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DATA</PARAMETER>
+       <TYP>XSTRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_NAME</PARAMETER>
+       <TYP>CHAR0064</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ENCODING</PARAMETER>
+       <TYP>CHAR0064</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>BAPIRET2</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_SESSIONID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Character field of length 40</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_NAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Character string - 64 user-defined characters</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ENCODING</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Character string - 64 user-defined characters</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Z_PDFTEX_CLOSE</FUNCNAME>
+     <SHORT_TEXT>close a pdf session</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_SESSIONID</PARAMETER>
+       <TYP>CHAR40</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_SESSIONID</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Z_PDFTEX_OPEN</FUNCNAME>
+     <SHORT_TEXT>Start of a PDF session</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_SESSIONID</PARAMETER>
+       <TYP>CHAR40</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>E_SESSIONID</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Z_PDFTEX_RUN</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>run pdftex</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_SESSIONID</PARAMETER>
+       <TYP>CHAR40</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SOURCE</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_PDF</PARAMETER>
+       <TYP>XSTRING</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_RC</PARAMETER>
+       <TYP>SYST_SUBRC</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_SESSIONID</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_PDF</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_RC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ABAP System Field: Return Code of ABAP Statements</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
