@@ -41,30 +41,25 @@
        <PARAMETER>I_SESSIONID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Character field of length 40</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_DATA</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_NAME</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Character string - 64 user-defined characters</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_ENCODING</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Character string - 64 user-defined characters</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Parameter</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -81,7 +76,6 @@
       <RSFDO>
        <PARAMETER>I_SESSIONID</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 001</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -98,7 +92,6 @@
       <RSFDO>
        <PARAMETER>E_SESSIONID</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 001</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -130,23 +123,19 @@
       <RSFDO>
        <PARAMETER>I_SESSIONID</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_SOURCE</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>E_PDF</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>E_RC</PARAMETER>
        <KIND>P</KIND>
        <STEXT>ABAP System Field: Return Code of ABAP Statements</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
