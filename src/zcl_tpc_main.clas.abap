@@ -15,6 +15,7 @@ CLASS zcl_tpc_main DEFINITION
         text      TYPE ltt_text,
         updflg(1) TYPE c,
       END OF lts_text_entry .
+    CONSTANTS textid_zztc TYPE thead-tdid VALUE 'ZZTC' ##NO_TEXT.
 
     CLASS-METHODS:
       parse_text_test
@@ -48,7 +49,9 @@ CLASS zcl_tpc_main DEFINITION
         !i_text   TYPE ltt_text OPTIONAL
         !i_header TYPE thead .
     METHODS save_editor .
-    METHODS save_text_all .
+    METHODS save_text_all
+              RAISING
+                zcx_tpc_error .
     METHODS get_name
       RETURNING
         VALUE(r_result) TYPE stxh-tdname .
@@ -359,6 +362,7 @@ CLASS zcl_tpc_main IMPLEMENTATION.
       IF sy-subrc <> 0.
         MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
                    WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4 INTO DATA(l_msg).
+        RAISE EXCEPTION TYPE zcx_tpc_error.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
@@ -463,7 +467,7 @@ CLASS zcl_tpc_main IMPLEMENTATION.
     DATA(lr_app) = NEW zcl_tpc_main( ).
     CALL METHOD lr_app->get_text
       EXPORTING
-        i_tdid    = 'ZZTC'
+        i_tdid    = textid_zztc
         i_tdspras = 'E'
         i_name    = i_name
       IMPORTING

@@ -23,6 +23,7 @@ CLASS zcl_pdftex_main DEFINITION
       END OF lts_stxhd .
     TYPES:
       ty_lt_lines TYPE STANDARD TABLE OF line WITH DEFAULT KEY .
+    CONSTANTS dest_pdftex TYPE string VALUE 'PDFTEX' ##NO_TEXT.
 
     DATA mr_viewer TYPE REF TO cl_gui_html_viewer .
     DATA mr_split TYPE REF TO cl_gui_splitter_container .
@@ -246,7 +247,7 @@ CLASS ZCL_PDFTEX_MAIN IMPLEMENTATION.
       l_subrc   TYPE syst_subrc,
       lt_text   TYPE zcl_tpc_main=>ltt_text.
 
-    CALL FUNCTION 'Z_PDFTEX_OPEN' DESTINATION 'PRG_PJL'
+    CALL FUNCTION 'Z_PDFTEX_OPEN' DESTINATION dest_pdftex
       IMPORTING
         e_sessionid = l_session.
 
@@ -268,7 +269,7 @@ CLASS ZCL_PDFTEX_MAIN IMPLEMENTATION.
 
       CONCATENATE LINES OF lt_tdtab INTO l_text.
       CLEAR lt_tdtab[].
-      CALL FUNCTION 'Z_PDFTEX_ATTACH' DESTINATION 'PRG_PJL'
+      CALL FUNCTION 'Z_PDFTEX_ATTACH' DESTINATION dest_pdftex
         EXPORTING
           i_sessionid = l_session
           i_data      = l_text
@@ -279,7 +280,7 @@ CLASS ZCL_PDFTEX_MAIN IMPLEMENTATION.
     l_text = |\\input "{ mr_tpc_main->get_name( ) CASE = LOWER }"|.
 
 
-    CALL FUNCTION 'Z_PDFTEX_RUN' DESTINATION 'PRG_PJL'
+    CALL FUNCTION 'Z_PDFTEX_RUN' DESTINATION dest_pdftex
       EXPORTING
         i_sessionid           = l_session
         i_source              = l_text
