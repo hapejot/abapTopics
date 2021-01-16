@@ -10,6 +10,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>Z_PDFTEX_ATTACH</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>attaching a binary file to the session</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
@@ -32,7 +33,6 @@
      <EXPORT>
       <RSEXP>
        <PARAMETER>RETURN</PARAMETER>
-       <REFERENCE>X</REFERENCE>
        <TYP>BAPIRET2</TYP>
       </RSEXP>
      </EXPORT>

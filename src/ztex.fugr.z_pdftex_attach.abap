@@ -7,6 +7,6 @@ FUNCTION Z_PDFTEX_ATTACH.
 *"     VALUE(I_NAME) TYPE  CHAR0064
 *"     VALUE(I_ENCODING) TYPE  CHAR0064
 *"  EXPORTING
-*"     REFERENCE(RETURN) TYPE  BAPIRET2
+*"     VALUE(RETURN) TYPE  BAPIRET2
 *"----------------------------------------------------------------------
 ENDFUNCTION.

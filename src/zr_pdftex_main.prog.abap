@@ -13,7 +13,6 @@ DATA:
   mr_cont TYPE REF TO zcl_abapdi_container.
 
 
-
 INITIALIZATION.
   CREATE OBJECT mr_cont.
   mr_main = CAST zcl_pdftex_main( mr_cont->get_instance( 'ZCL_PDFTEX_MAIN' ) ).
